@@ -12,6 +12,29 @@ Hello {{name}}!
     Address ={{address.houseno}}, {{address.street}}
 </p>
 <ul>
-    <li *ngFor="let hobby of hobbies; let i=index">{{i+1}}:{{hobby}}</li>
+    <li *ngFor="let hobby of hobbies; let i=index">
+        {{i+1}}:{{hobby}} <button (click)="deleteHobby(hobby)">Delete</button>
+    </li>
 </ul>
 <button (click)="onClick()">Click Me!</button>
+<form (submit)="addHobby(hobby.value)">
+    <label>
+        Hobby :
+    </label>
+    <input type="text">
+</form>
+<h2>Edit Details</h2>
+<form >
+    <label for="name" >
+        Name :
+    </label>
+    <input type="text" [(ngModel)]="name" name="name"><br>
+    <label for="age">
+       Age :
+    </label>
+    <input type="text" [(ngModel)]="age" name="age"><br>
+    <label for="email">
+        Email :
+    </label>
+    <input type="text" [(ngModel)]="email" name="email">
+</form>

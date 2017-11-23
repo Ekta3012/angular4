@@ -34,6 +34,25 @@ export class UserComponent implements OnInit {
     this.hobbies.push("new hobby");
   }
 
+  addHobby(hobby)
+  {
+    //console.log(hobby);
+    this.hobbies.unshift(hobby); //unshift add element to starting of array and push in the end.
+    return false;
+  }
+
+  deleteHobby(hobby)
+  {
+    //console.log(hobby);
+    for(let i=0;i<this.hobbies.length;i++)
+    {
+      if(this.hobbies[i]==hobby)
+      {
+        this.hobbies.splice(i,1);
+      }
+    }
+  }
+
 }
 interface Address{
   street:string,
