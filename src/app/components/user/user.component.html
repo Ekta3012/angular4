@@ -16,7 +16,10 @@ Hello {{name}}!
         {{i+1}}:{{hobby}} <button (click)="deleteHobby(hobby)">Delete</button>
     </li>
 </ul>
+
 <button (click)="onClick()">Click Me!</button>
+<button (click)="toggleEdit()">Edit User</button>
+
 <form (submit)="addHobby(hobby.value)">
     <label>
         Hobby :
@@ -38,3 +41,13 @@ Hello {{name}}!
     </label>
     <input type="text" [(ngModel)]="email" name="email">
 </form>
+
+<h1>
+    Posts
+</h1>
+<div *ngFor="let post of posts; let i=index">
+    <h4>{{i+1}} {{post.title}}</h4>
+    <p>
+        {{post.body}}
+    </p>
+</div>
